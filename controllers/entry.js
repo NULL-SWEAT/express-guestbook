@@ -20,7 +20,6 @@ module.exports = {
 
 	createEntry: (req, res) => {
 		var entryData = req.body
-		console.log(req.body)
 		Entry.create(entryData, function(err, entry){
 			if(err) throw err
 			console.log('New entry added')
