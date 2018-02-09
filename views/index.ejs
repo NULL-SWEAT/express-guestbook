@@ -1,0 +1,21 @@
+<% include header %>
+  <br/>
+  <div class="row">
+    <% if (allEntries) { %>
+      <% allEntries.forEach( (entry) => { %>
+        <div class="col s12 m6">
+          <div class="card grey darken-3 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title"><p><%= entry.author %></p></span>
+                <blockquote><%- entry.text.replace(/\r\n/g, '<br/>') %></blockquote>
+              <span class="right"><%= moment(entry.date).format("MMM Do YYYY, h:mma") %></span>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <h4 class="center-align">No entries found</h4>
+    <% } %>
+  </div>
+
+<% include footer %>
